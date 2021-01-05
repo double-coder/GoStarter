@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -85,4 +86,13 @@ func datatypes() {
 		LastName:  "Path",
 	}
 	fmt.Println(u2)
+
+	port := 3000
+	_, err := startWebServer(port, 2)
+	fmt.Println(err)
+}
+
+func startWebServer(port, numberOfRetries int) (int, error) {
+	fmt.Println(port)
+	return 2, errors.New("something went wrong")
 }

@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/double-coder/GoStarter.git/models"
+	"github.com/double-coder/GoStarter.git/controllers"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "Aditya",
-		LastName:  "Pathania",
-	}
-	fmt.Println(u)
+	controllers.RegisterController()
+	http.ListenAndServe(":3000", nil)
 }
